@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "https://jeremiaspalettaportfolio.web.app", maxAge = 3600)
+@CrossOrigin(origins = "http://jeremiaspalettaportfolio.web.app", maxAge = 3600)
 @RestController
 @RequestMapping ("/api")
 public class SkillController {
