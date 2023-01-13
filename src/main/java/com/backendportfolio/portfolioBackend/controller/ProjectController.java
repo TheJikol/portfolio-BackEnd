@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://jeremiaspalettaportfolio.web.app", maxAge = 3600)
+@CrossOrigin(origins = "https://jeremiaspalettaportfolio.web.app", maxAge = 3600)
 @RestController
 @RequestMapping ("/api")
 public class ProjectController {
@@ -40,7 +40,7 @@ public class ProjectController {
         proServ.deleteProject(id);
     }
     
-    @PutMapping ("edit/project/{id}")
+    @PutMapping ("/edit/project/{id}")
     public void editProject (@PathVariable Long id,
                              @RequestBody Project pro){
         Project oldPro = proServ.searchProject(id);

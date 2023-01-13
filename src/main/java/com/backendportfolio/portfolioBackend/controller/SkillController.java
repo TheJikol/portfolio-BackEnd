@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://jeremiaspalettaportfolio.web.app", maxAge = 3600)
+@CrossOrigin(origins = "https://jeremiaspalettaportfolio.web.app", maxAge = 3600)
 @RestController
 @RequestMapping ("/api")
 public class SkillController {
@@ -24,12 +24,12 @@ public class SkillController {
     @Autowired
     private ISkillService skiServ;
     
-    @PostMapping ("create/skill")
+    @PostMapping ("/create/skill")
     public void createSkill(@RequestBody Skill ski){
         skiServ.createSkill(ski);
     }
     
-    @GetMapping ("view/skill")
+    @GetMapping ("/view/skill")
     @ResponseBody
     public List<Skill> viewSkill(){
         return skiServ.viewSkill();
@@ -40,7 +40,7 @@ public class SkillController {
         skiServ.deleteSkill(id);
     }
     
-    @PutMapping ("edit/skill/{id}")
+    @PutMapping ("/edit/skill/{id}")
     public void editSkill(@PathVariable Long id,
                           @RequestBody Skill ski){
         Skill oldSki = skiServ.searchSkill(id);
